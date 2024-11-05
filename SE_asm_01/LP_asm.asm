@@ -24,14 +24,16 @@ HW DD ?													;Выделяем 4 байта памяти но не инециализируем
 
 main PROC
 START :
-		PUSH	MB_OK
-		PUSH	OFFSET STR1
-		PUSH	OFFSET STR2
-		PUSH	HW
-		CALL	MessageBoxA
+		;PUSH	MB_OK
+		;PUSH	OFFSET STR1
+		;PUSH	OFFSET STR2
+		;PUSH	HW
+		;CALL	MessageBoxA
+
+		INVOKE MessageBoxA, HW, OFFSET STR2, OFFSET STR1, MB_OK
 
 	push -1
-	call ExitProcess
+	call ExitProcess 
 
 main ENDP
 
